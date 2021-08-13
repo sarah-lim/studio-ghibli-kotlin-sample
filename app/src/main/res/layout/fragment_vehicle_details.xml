@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vehicle"
+            type="com.slim.studiog.network.models.Vehicle" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space_large">
+
+            <TextView
+                android:id="@+id/fragment_vehicle_details_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_big_header"
+                android:text="@{vehicle.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Red Wing"
+                style="@style/TitleTextStyle"/>
+            <TextView
+                android:id="@+id/fragment_vehicle_details_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{vehicle.description}"
+                android:layout_marginTop="@dimen/space_xxlarge"
+                app:layout_constraintTop_toBottomOf="@id/fragment_vehicle_details_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="A military airship utilized by the government to access Laputa" />
+
+            <!-- classification -->
+            <TextView
+                android:id="@+id/fragment_vehicle_details_class_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_vehicle_details_desc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_vehicle_details_class_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_classification" />
+
+            <TextView
+                android:id="@+id/fragment_vehicle_details_class_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{vehicle.vehicleClass}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_vehicle_details_class_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_vehicle_details_class_label"
+                tools:text="Airplane" />
+
+            <!-- Length -->
+            <TextView
+                android:id="@+id/fragment_vehicle_details_length_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_vehicle_details_class_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_vehicle_details_length_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_length" />
+
+            <TextView
+                android:id="@+id/fragment_vehicle_details_length_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{vehicle.length}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_vehicle_details_length_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_vehicle_details_length_label"
+                tools:text="20" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

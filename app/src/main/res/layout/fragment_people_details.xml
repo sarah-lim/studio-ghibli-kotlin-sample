@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="people"
+            type="com.slim.studiog.network.models.People" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space_large">
+
+            <TextView
+                android:id="@+id/fragment_people_details_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_big_header"
+                android:text="@{people.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ashitaka"
+                style="@style/TitleTextStyle"/>
+
+            <!-- gender -->
+            <TextView
+                android:id="@+id/fragment_people_details_gender_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_people_details_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_people_details_gender_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_gender" />
+
+            <TextView
+                android:id="@+id/fragment_people_details_gender_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{people.gender}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_people_details_gender_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_people_details_gender_label"
+                tools:text="Male" />
+
+            <!-- producer -->
+            <TextView
+                android:id="@+id/fragment_people_details_age_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_people_details_gender_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_people_details_age_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_age" />
+
+            <TextView
+                android:id="@+id/fragment_people_details_age_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{people.age}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_people_details_age_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_people_details_age_label"
+                tools:text="late teens" />
+
+            <!-- release date -->
+            <TextView
+                android:id="@+id/fragment_people_details_eye_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_people_details_age_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_people_details_eye_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_eye_color" />
+
+            <TextView
+                android:id="@+id/fragment_people_details_eye_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_large"
+                android:text="@{people.eyeColor}"
+                app:layout_constraintStart_toEndOf="@id/fragment_people_details_eye_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_people_details_eye_label"
+                tools:text="brown" />
+
+            <!-- hair color -->
+            <TextView
+                android:id="@+id/fragment_people_details_hair_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_people_details_eye_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_people_details_hair_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_hair_color" />
+
+            <TextView
+                android:id="@+id/fragment_people_details_hair_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_large"
+                android:text="@{people.hairColor}"
+                app:layout_constraintStart_toEndOf="@id/fragment_people_details_hair_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_people_details_hair_label"
+                tools:text="brown" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

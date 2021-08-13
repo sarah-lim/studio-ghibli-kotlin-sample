@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="location"
+            type="com.slim.studiog.network.models.Location" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space_large">
+
+            <TextView
+                android:id="@+id/fragment_location_details_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_big_header"
+                android:text="@{location.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Irontown"
+                style="@style/TitleTextStyle"/>
+
+            <!-- climate -->
+            <TextView
+                android:id="@+id/fragment_location_details_climate_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_location_details_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_location_details_climate_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_climate" />
+
+            <TextView
+                android:id="@+id/fragment_location_details_climate_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{location.climate}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_location_details_climate_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_location_details_climate_label"
+                tools:text="Male" />
+
+            <!-- terrain -->
+            <TextView
+                android:id="@+id/fragment_location_details_terrain_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_location_details_climate_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_location_details_terrain_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_terrain" />
+
+            <TextView
+                android:id="@+id/fragment_location_details_terrain_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{location.terrain}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_location_details_terrain_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_location_details_terrain_label"
+                tools:text="Mountain" />
+
+            <!-- surface water -->
+            <TextView
+                android:id="@+id/fragment_location_details_surface_water_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_location_details_terrain_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_location_details_surface_water_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_surface_water" />
+
+            <TextView
+                android:id="@+id/fragment_location_details_surface_water_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_large"
+                android:text="@{location.surfaceWater}"
+                app:layout_constraintStart_toEndOf="@id/fragment_location_details_surface_water_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_location_details_surface_water_label"
+                tools:text="40" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

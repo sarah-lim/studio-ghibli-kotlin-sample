@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">StudioG</string>
+
+    <string name="menu_films">Films</string>
+    <string name="menu_people">People</string>
+    <string name="menu_locations">Locations</string>
+    <string name="menu_species">Species</string>
+    <string name="menu_vehicles">Vehicles</string>
+
+    <string name="label_director">Director</string>
+    <string name="label_producer">Producer</string>
+    <string name="label_release_date">Release Date</string>
+    <string name="label_rt_score">RT Score</string>
+    <string name="label_films">Films</string>
+    <string name="label_people">People</string>
+    <string name="label_species">Species</string>
+    <string name="label_locations">Locations</string>
+    <string name="label_vehicles">Vehicles</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_age">Age</string>
+    <string name="label_eye_color">Eye Color</string>
+    <string name="label_hair_color">Hair Color</string>
+    <string name="label_climate">Climate</string>
+    <string name="label_terrain">Terrain</string>
+    <string name="label_surface_water">Surface Water</string>
+    <string name="label_residents">Residents</string>
+    <string name="label_classification">Classification</string>
+    <string name="label_vehicle_class">Vehicle Class</string>
+    <string name="label_length">Length</string>
+    <string name="label_pilot">Pilot</string>
+</resources>

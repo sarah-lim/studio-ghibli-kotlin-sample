@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/filmsFragment">
+
+    <fragment
+        android:id="@+id/filmsFragment"
+        android:name="com.slim.studiog.ui.films.FilmsFragment"
+        tools:layout="@layout/fragment_films">
+        <action
+            android:id="@+id/action_filmsFragment_to_filmDetailsFragment"
+            app:destination="@id/filmDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmDetailsFragment"
+        android:name="com.slim.studiog.ui.films.details.FilmDetailsFragment"
+        tools:layout="@layout/fragment_film_details">
+        <argument
+            android:name="film"
+            app:argType="com.slim.studiog.network.models.Film" />
+    </fragment>
+    <fragment
+        android:id="@+id/peopleFragment"
+        android:name="com.slim.studiog.ui.people.PeopleFragment"
+        android:label="fragment_people"
+        tools:layout="@layout/fragment_people" >
+        <action
+            android:id="@+id/action_peopleFragment_to_peopleDetailsFragment"
+            app:destination="@id/peopleDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/peopleDetailsFragment"
+        android:name="com.slim.studiog.ui.people.details.PeopleDetailsFragment"
+        tools:layout="@layout/fragment_people_details">
+        <argument
+            android:name="people"
+            app:argType="com.slim.studiog.network.models.People" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.slim.studiog.ui.locations.LocationsFragment"
+        tools:layout="@layout/fragment_locations">
+        <action
+            android:id="@+id/action_locationsFragment_to_locationDetailsFragment"
+            app:destination="@id/locationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailsFragment"
+        android:name="com.slim.studiog.ui.locations.details.LocationDetailsFragment"
+        android:label="LocationDetailsFragment"
+        tools:layout="@layout/fragment_location_details">
+        <argument
+            android:name="location"
+            app:argType="com.slim.studiog.network.models.Location" />
+    </fragment>
+    <fragment
+        android:id="@+id/speciesFragment"
+        android:name="com.slim.studiog.ui.species.SpeciesFragment"
+        tools:layout="@layout/fragment_species" >
+        <action
+            android:id="@+id/action_speciesFragment_to_speciesDetailsFragment"
+            app:destination="@id/speciesDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/speciesDetailsFragment"
+        android:name="com.slim.studiog.ui.species.details.SpeciesDetailsFragment"
+        tools:layout="@layout/fragment_species_details">
+        <argument
+            android:name="species"
+            app:argType="com.slim.studiog.network.models.Species" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesFragment"
+        android:name="com.slim.studiog.ui.vehicles.VehiclesFragment"
+        tools:layout="@layout/fragment_vehicles" >
+        <action
+            android:id="@+id/action_vehiclesFragment_to_vehicleDetailsFragment"
+            app:destination="@id/vehicleDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehicleDetailsFragment"
+        android:name="com.slim.studiog.ui.vehicles.VehicleDetailsFragment"
+        tools:layout="@layout/fragment_vehicle_details">
+        <argument
+            android:name="vehicle"
+            app:argType="com.slim.studiog.network.models.Vehicle" />
+    </fragment>
+</navigation>

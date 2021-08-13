@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="species"
+            type="com.slim.studiog.network.models.Species" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space_large">
+
+            <TextView
+                android:id="@+id/fragment_species_details_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_big_header"
+                android:text="@{species.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Spirit"
+                style="@style/TitleTextStyle"/>
+
+            <!-- classification -->
+            <TextView
+                android:id="@+id/fragment_species_details_classification_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_species_details_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_species_details_classification_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_classification" />
+
+            <TextView
+                android:id="@+id/fragment_species_details_classification_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{species.classification}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_species_details_classification_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_species_details_classification_label"
+                tools:text="Male" />
+
+            <!-- eye color -->
+            <TextView
+                android:id="@+id/fragment_species_details_eye_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_species_details_classification_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_species_details_eye_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_eye_color" />
+
+            <TextView
+                android:id="@+id/fragment_species_details_eye_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{species.eyeColors}"
+                android:layout_marginStart="@dimen/space_large"
+                app:layout_constraintStart_toEndOf="@id/fragment_species_details_eye_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_species_details_eye_label"
+                tools:text="Red" />
+
+            <!-- hair color -->
+            <TextView
+                android:id="@+id/fragment_species_details_hair_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                app:layout_constraintTop_toBottomOf="@id/fragment_species_details_eye_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fragment_species_details_hair_value"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="@string/label_hair_color" />
+
+            <TextView
+                android:id="@+id/fragment_species_details_hair_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_large"
+                android:text="@{species.hairColors}"
+                app:layout_constraintStart_toEndOf="@id/fragment_species_details_hair_label"
+                app:layout_constraintBaseline_toBaselineOf="@id/fragment_species_details_hair_label"
+                tools:text="Light Orange" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
